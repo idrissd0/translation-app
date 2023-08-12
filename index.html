@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Translation App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f8f8;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .input-group select, .input-group textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .button-group {
+            text-align: center;
+        }
+
+        .button-group button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .result {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Translation App</h1>
+
+        <div class="input-group">
+            <label for="textToTranslate">Text to Translate:</label>
+            <textarea id="textToTranslate" rows="5"></textarea>
+        </div>
+        
+        <div class="input-group">
+            <label for="targetLanguage">To:</label>
+            <select id="targetLanguage">
+                <option value="en">English</option>
+                <option value="fr">French</option>
+                <!-- Add more target language options as needed -->
+            </select>
+        </div>
+
+        <div class="button-group">
+            <button id="translateButton">Translate</button>
+        </div>
+
+        <div class="result">
+            <p id="translatedText"></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('translateButton').addEventListener('click', function() {
+            // var sourceLanguage = document.getElementById('sourceLanguage').value;
+            var targetLanguage = document.getElementById('targetLanguage').value;
+            var textToTranslate = document.getElementById('textToTranslate').value;
+            var translatedText = document.getElementById('translatedText');
+
+            
+        });
+    </script>
+</body>
+</html>

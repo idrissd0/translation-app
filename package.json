@@ -1,0 +1,16 @@
+{
+  "name": "nodejstranslatorandgcapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node google_translate_str.js"
+  },
+  "author": "Driss Youssef\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D& \u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~youssef",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/translate": "^8.0.1",
+    "dotenv": "^16.3.1"
+  }
+}
