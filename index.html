@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Translation App</title>
     <style>
@@ -58,6 +59,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h1>Translation App</h1>
@@ -72,6 +74,7 @@
             <select id="targetLanguage">
                 <option value="en">English</option>
                 <option value="fr">French</option>
+                <option value="ar">Arabic</option>
                 <!-- Add more target language options as needed -->
             </select>
         </div>
@@ -87,12 +90,31 @@
 
     <script>
         document.getElementById('translateButton').addEventListener('click', function() {
-            // var sourceLanguage = document.getElementById('sourceLanguage').value;
             var targetLanguage = document.getElementById('targetLanguage').value;
             var textToTranslate = document.getElementById('textToTranslate').value;
             var translatedText = document.getElementById('translatedText');
-
-            
+    
+            // Create an XMLHttpRequest object
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'http://localhost:3000/translate', true);
+            xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+    
+            // Define the callback function for when the request completes
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    var response = JSON.parse(xhr.responseText);
+                    translatedText.textContent = response.translatedText;
+                } else {
+                    translatedText.textContent = 'An error occurred while translating.';
+                }
+            };
+    
+            // Prepare the data and send the request
+            var requestData = JSON.stringify({
+                textToTranslate: textToTranslate,
+                targetLanguage: targetLanguage
+            });
+            xhr.send(requestData);
         });
     </script>
 </body>
